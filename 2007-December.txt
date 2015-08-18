@@ -1,0 +1,219 @@
+From kolmognus-discussion at lists.berlios.de  Sat Dec  1 04:03:24 2007
+From: kolmognus-discussion at lists.berlios.de (General mailing list for KolmoGNUS)
+Date: Fri, 30 Nov 2007 19:03:24 -0800
+Subject: [Kolmognus] Welcome to the KolmoGNUS mailing list!
+In-Reply-To: <474AFCCB.9030500@laposte.net>
+References: <474AFCCB.9030500@laposte.net>
+Message-ID: <b87247c70711301903s76bae59fk526b479109eaf891@mail.gmail.com>
+
+Hmph! I am sorry for replying so late but, my weeks tend to be hectic,
+and so I do most of my hacking on the weekends. Sorry again for
+replying so late!
+
+I read your evaluations about the GTK GUI, and I will definitely heed
+them. And also rest assured, I was planning to add in the keyboard
+shortcuts, but I was leaving them for last, simply because GTK's
+method of polling events for keys is a bit baroque.
+
+Another question. I haven't poked around very deeply into the
+internals yet, but I was wondering if it was possible to add
+recent/very-recent links into the queue. The stuff from del.ici.ous,
+while often very pertinent, is old (I've gotten things from 2005 for
+instance), and sometimes I'd like to look for new things that
+Reddit/YCombinator just don't have (or their cultures downmod, etc.).
+Will there be significant internal hacking needed for this, or is
+there a social news site with tagging already implemented that we can
+just pop into KolmoGNUS?
+
+I'm sitting down now to continue the hacking, and I've just checked
+out the newest SVN, and I'll be continuing on the interface. Again,
+sorry for the late reply, and I hope we can make KolmoGNUS an
+easy-to-use and effective application.
+
+On 11/26/07, General mailing list for KolmoGNUS
+<kolmognus-discussion at lists.berlios.de> wrote:
+> Hello all,
+>
+> As you should have seen it I have just created the list and added you to the
+> subscribers' list.
+>
+> Please post to this list before investing significant time in doing something
+> such as coding, in order to avoid wasted effort.
+>
+> Today I received Arnaud's work on a PyQT GUI. It's not functional yet, but I
+> added it on the svn so you can check it out. Blah, I'm still waiting for your
+> GTK code, I'm very interested in it.
+>
+> That's all for now!
+>
+> joel
+>
+>
+> _______________________________________________
+> Kolmognus-discussion mailing list
+> Kolmognus-discussion at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/kolmognus-discussion
+>
+
+
+From kolmognus-discussion at lists.berlios.de  Sat Dec  1 04:37:45 2007
+From: kolmognus-discussion at lists.berlios.de (General mailing list for KolmoGNUS)
+Date: Fri, 30 Nov 2007 19:37:45 -0800
+Subject: [Kolmognus] Welcome to the KolmoGNUS mailing list!
+In-Reply-To: <b87247c70711301903s76bae59fk526b479109eaf891@mail.gmail.com>
+References: <474AFCCB.9030500@laposte.net>
+	<b87247c70711301903s76bae59fk526b479109eaf891@mail.gmail.com>
+Message-ID: <b87247c70711301937v2491d9eeq467966da2623d6f1@mail.gmail.com>
+
+Oh, and while we stay in this slowly-tangenting thread, I'm registered
+as KRoy on Berlios.
+
+On 11/30/07, Blah Blahn <blarghmania at gmail.com> wrote:
+> Hmph! I am sorry for replying so late but, my weeks tend to be hectic,
+> and so I do most of my hacking on the weekends. Sorry again for
+> replying so late!
+>
+> I read your evaluations about the GTK GUI, and I will definitely heed
+> them. And also rest assured, I was planning to add in the keyboard
+> shortcuts, but I was leaving them for last, simply because GTK's
+> method of polling events for keys is a bit baroque.
+>
+> Another question. I haven't poked around very deeply into the
+> internals yet, but I was wondering if it was possible to add
+> recent/very-recent links into the queue. The stuff from del.ici.ous,
+> while often very pertinent, is old (I've gotten things from 2005 for
+> instance), and sometimes I'd like to look for new things that
+> Reddit/YCombinator just don't have (or their cultures downmod, etc.).
+> Will there be significant internal hacking needed for this, or is
+> there a social news site with tagging already implemented that we can
+> just pop into KolmoGNUS?
+>
+> I'm sitting down now to continue the hacking, and I've just checked
+> out the newest SVN, and I'll be continuing on the interface. Again,
+> sorry for the late reply, and I hope we can make KolmoGNUS an
+> easy-to-use and effective application.
+>
+> On 11/26/07, General mailing list for KolmoGNUS
+> <kolmognus-discussion at lists.berlios.de> wrote:
+> > Hello all,
+> >
+> > As you should have seen it I have just created the list and added you to the
+> > subscribers' list.
+> >
+> > Please post to this list before investing significant time in doing something
+> > such as coding, in order to avoid wasted effort.
+> >
+> > Today I received Arnaud's work on a PyQT GUI. It's not functional yet, but I
+> > added it on the svn so you can check it out. Blah, I'm still waiting for your
+> > GTK code, I'm very interested in it.
+> >
+> > That's all for now!
+> >
+> > joel
+> >
+> >
+> > _______________________________________________
+> > Kolmognus-discussion mailing list
+> > Kolmognus-discussion at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/kolmognus-discussion
+> >
+>
+
+
+From kolmognus-discussion at lists.berlios.de  Sat Dec  1 08:02:48 2007
+From: kolmognus-discussion at lists.berlios.de (General mailing list for KolmoGNUS)
+Date: Fri, 30 Nov 2007 23:02:48 -0800
+Subject: [Kolmognus] GTK Interface Requirements
+Message-ID: <b87247c70711302302v57b0fd67gfe82d0a7edfd55d0@mail.gmail.com>
+
+I'm adding a menu into the GTK interface right now, and GTK has 3
+different ways to add in menus. Now, the easiest way, an XML
+description of the menu, depends on PyGTK 2.4. Is this a sane
+requirement to have for our users, or do we want to support older
+versions of PyGTK?
+
+
+From joel.schaerer at laposte.net  Sat Dec  1 14:01:32 2007
+From: joel.schaerer at laposte.net (Joel Schaerer)
+Date: Sat, 01 Dec 2007 14:01:32 +0100
+Subject: [Kolmognus] GTK Interface Requirements
+In-Reply-To: <b87247c70711302302v57b0fd67gfe82d0a7edfd55d0@mail.gmail.com>
+References: <b87247c70711302302v57b0fd67gfe82d0a7edfd55d0@mail.gmail.com>
+Message-ID: <47515B2C.7050402@laposte.net>
+
+Considering that I already depend on python 2.5, I think it's safe. My policy on 
+the subject is to add as few dependencies as possible, and not to depend on 
+stuff that's not available on mainstream linux distros. So CVS version of 
+libraries is not OK, but reasonably recent is :)
+
+joel
+
+
+General mailing list for KolmoGNUS wrote:
+> I'm adding a menu into the GTK interface right now, and GTK has 3
+> different ways to add in menus. Now, the easiest way, an XML
+> description of the menu, depends on PyGTK 2.4. Is this a sane
+> requirement to have for our users, or do we want to support older
+> versions of PyGTK?
+> _______________________________________________
+> Kolmognus-discussion mailing list
+> Kolmognus-discussion at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/kolmognus-discussion
+> 
+
+
+
+From blarghmania at gmail.com  Sun Dec 16 10:43:38 2007
+From: blarghmania at gmail.com (Blah Blahn)
+Date: Sun, 16 Dec 2007 01:43:38 -0800
+Subject: [Kolmognus] Sorry for the stagnation
+Message-ID: <b87247c70712160143j36bd3027lbf2aebc999523cfb@mail.gmail.com>
+
+Right now, things are piling up on me like no tomorrow, and for the next 2
+weeks I'll be swamped by work. My load will lighten significantly after
+that, however, and I'll get back to work proper on KolmoGNUS at that point.
+Sorry for the inconvenience this is causing.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/kolmognus-discussion/attachments/20071216/dc28eec0/attachment.html>
+
+From joel.schaerer at laposte.net  Mon Dec 17 09:55:10 2007
+From: joel.schaerer at laposte.net (Joel Schaerer)
+Date: Mon, 17 Dec 2007 09:55:10 +0100
+Subject: [Kolmognus] Sorry for the stagnation
+In-Reply-To: <b87247c70712160143j36bd3027lbf2aebc999523cfb@mail.gmail.com>
+References: <b87247c70712160143j36bd3027lbf2aebc999523cfb@mail.gmail.com>
+Message-ID: <4766396E.3080208@laposte.net>
+
+No problem, I've been busy too. I did look for your commit which was supposed to 
+happen 16 hours after your last mail, though :)
+
+Anyways, I'll probably get back on it soon too.
+
+joel
+
+
+Blah Blahn wrote:
+> Right now, things are piling up on me like no tomorrow, and for the next 
+> 2 weeks I'll be swamped by work. My load will lighten significantly 
+> after that, however, and I'll get back to work proper on KolmoGNUS at 
+> that point. Sorry for the inconvenience this is causing.
+> 
+> 
+> ------------------------------------------------------------------------
+> 
+> _______________________________________________
+> Kolmognus-discussion mailing list
+> Kolmognus-discussion at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/kolmognus-discussion
+
+
+-- 
+Jo?l Schaerer
+9, Place Lieutenant Morel
+69001 LYON
+
+06 26 65 29 54
+
+
+

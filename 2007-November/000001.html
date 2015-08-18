@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Kolmognus] [Fwd: Re: KolmoGNUS Hacking]
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/kolmognus-discussion/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:kolmognus-discussion%40lists.berlios.de?Subject=Re%3A%20%5BKolmognus%5D%20%5BFwd%3A%20Re%3A%20KolmoGNUS%20Hacking%5D&In-Reply-To=%3C474D6AB3.6020207%40insa-lyon.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000000.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Kolmognus] [Fwd: Re: KolmoGNUS Hacking]</H1>
+    <B>General mailing list for KolmoGNUS</B> 
+    <A HREF="mailto:kolmognus-discussion%40lists.berlios.de?Subject=Re%3A%20%5BKolmognus%5D%20%5BFwd%3A%20Re%3A%20KolmoGNUS%20Hacking%5D&In-Reply-To=%3C474D6AB3.6020207%40insa-lyon.fr%3E"
+       TITLE="[Kolmognus] [Fwd: Re: KolmoGNUS Hacking]">kolmognus-discussion at lists.berlios.de
+       </A><BR>
+    <I>Wed Nov 28 14:18:43 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000000.html">[Kolmognus] Welcome to the KolmoGNUS mailing list!
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello!
+
+Thanks a lot for your contribution. I have tested a bit your GTK interface, and 
+though it is not yet completely functional, I think we are not far from it 
+becomming KolmoGNUS default interface.
+I have added your code to the SVN repository. I'd like to add you to the 
+commiters list, so you can push your changes directly. For that you will need to 
+create a BerliOS account.
+A few random remarks:
+
+- The application takes some time to load the stories when it starts, you need 
+to show the user something to make him wait. A progress bar would be neat.
+
+- The keyboard shortcuts are missing. I think they are very important, since 
+clicking on the buttons is long and cumbersome.
+
+- There is a little bug in the initial training: it has to be done the first 
+time the user starts the application only, not every time.
+
+About your question: App.stories is a dictionnary whose keys are link urls and 
+whose values are DeliciousStory (item_description.py) objects. These objects 
+keep all the information about a specific link. The idea behind this object 
+hierarchy is that delicious doesn't need to be the only source of links, so to 
+add a new source, you would just need to write a new Story class. It is actually 
+quite high on my priority list to allow the user to add custom rss feeds.
+
+joel
+
+
+PS : please write to the mailing list, so everybody can stay updated.
+
+Blah Blahn wrote:
+&gt;<i> I, too, feel PyGTK to be the more mature, tested choice, and believe 
+</I>&gt;<i> that GTK's more liberal license is quite useful for a utility 
+</I>&gt;<i> application like this. Let me attach the work I've done up 'till now. 
+</I>&gt;<i> The interface is mostly complete, I have yet to code the window that 
+</I>&gt;<i> queries for a user's ham/spam tags, and I have to split the entire thing 
+</I>&gt;<i> into threads so that feeds may be queried without locking up the GUI 
+</I>&gt;<i> window. About the density of the code, I do indeed understand that good 
+</I>&gt;<i> code is often dense in places, so some more explanation is all I'm 
+</I>&gt;<i> asking for (and, perhaps, a shot at cleaning up the code myself). 
+</I>&gt;<i> Particularly App.show_stories is messy, and I would like to know the 
+</I>&gt;<i> structure of App.stories.
+</I>&gt;<i> 
+</I>&gt;<i> On 11/26/07, *Joel Schaerer* &lt; <A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">joel.schaerer at insa-lyon.fr</A> 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">joel.schaerer at insa-lyon.fr</A>&gt;&gt; wrote:
+</I>&gt;<i> 
+</I>&gt;<i>     Ok, it looks like this email got lost, so I'm sending it again.
+</I>&gt;<i> 
+</I>&gt;<i>     joel
+</I>&gt;<i> 
+</I>&gt;<i>     -------- Original Message --------
+</I>&gt;<i>     Subject: Re: KolmoGNUS Hacking
+</I>&gt;<i>     Date: Sun, 25 Nov 2007 11:25:21 +0100
+</I>&gt;<i>     From: Joel Schaerer &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">joel.schaerer at laposte.net</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">joel.schaerer at laposte.net</A>&gt;&gt;
+</I>&gt;<i>     To: Blah Blahn &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">blarghmania at gmail.com</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">blarghmania at gmail.com</A>&gt;&gt;,  Arnaud GELAS
+</I>&gt;<i>     &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">gelas at creatis.insa-lyon.fr</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">gelas at creatis.insa-lyon.fr</A>&gt;&gt;
+</I>&gt;<i>     CC: Axel Mart&#237;nez M&#246;ller &lt; <A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">a.martinez-moller at lrz.tu-muenchen.de</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">a.martinez-moller at lrz.tu-muenchen.de</A>&gt;&gt;
+</I>&gt;<i>     References:
+</I>&gt;<i>     &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">b87247c70711240344w359fc263ycc4e089c04f0402a at mail.gmail.com</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">b87247c70711240344w359fc263ycc4e089c04f0402a at mail.gmail.com</A>&gt;&gt;
+</I>&gt;<i> 
+</I>&gt;<i>     Hi to both of you!
+</I>&gt;<i> 
+</I>&gt;<i>     We have a little problem here: you have simultaneously started
+</I>&gt;<i>     written a new
+</I>&gt;<i>     interface for KolmoGNUS, Blah in pyGTK and Arnaud in PyQT...
+</I>&gt;<i>     Let me first say that I am delighted at such initiatives! Of course
+</I>&gt;<i>     we are going
+</I>&gt;<i>     to have to chose one way or another in order to avoid code and effort
+</I>&gt;<i>     duplication. I have a slight preference for PyGTK because I'm a long
+</I>&gt;<i>     time Gnome
+</I>&gt;<i>     user and because PYGTK seems better developed and more widely used.
+</I>&gt;<i>     It also has
+</I>&gt;<i>     a more permissive license. Of course, since you are the ones
+</I>&gt;<i>     developing the new
+</I>&gt;<i>     interfaces, you have your word to say! What is your feeling about
+</I>&gt;<i>     this issue?
+</I>&gt;<i>     Also, could you each send me what you have done, so I can assess how
+</I>&gt;<i>     far you are.
+</I>&gt;<i> 
+</I>&gt;<i>     In order to avoid this kind of problems in the future, I am setting
+</I>&gt;<i>     up a mailing
+</I>&gt;<i>     list for the project, I will give you more information as soon as it
+</I>&gt;<i>     is ready.
+</I>&gt;<i> 
+</I>&gt;<i>     I have just made a new release. Even though it is only a minor
+</I>&gt;<i>     update, I
+</I>&gt;<i>     encourage you to grab the code so we can all work on the same
+</I>&gt;<i>     codebase. You can
+</I>&gt;<i>     also use subversion to check out the code. I'm a bit reluctant to
+</I>&gt;<i>     give you
+</I>&gt;<i>     commit rights for now, but if you send me nice patches you *will*
+</I>&gt;<i>     get them :)
+</I>&gt;<i> 
+</I>&gt;<i>     Both of you have raised concerns over the &quot;ugliness&quot; or &quot;density&quot; of
+</I>&gt;<i>     the code. I
+</I>&gt;<i>     don't think the code is &quot;ugly&quot;, although it's evolved quite a lot so
+</I>&gt;<i>     it should
+</I>&gt;<i>     be expected that some areas don't really make sense. Anyhow, please
+</I>&gt;<i>     use more
+</I>&gt;<i>     specific words when describing the code: i don't think ugly really means
+</I>&gt;<i>     anything; on the other hand &quot;unmaintainable, understandable,
+</I>&gt;<i>     reusable&quot; and such
+</I>&gt;<i>     make a lot more sense.
+</I>&gt;<i> 
+</I>&gt;<i>     I do understand of course that getting inside the code is a bit
+</I>&gt;<i>     tricky, like for
+</I>&gt;<i>     any non-trivial project. I'll be delighted to answer any questions about
+</I>&gt;<i>     specific data structures or functions.
+</I>&gt;<i> 
+</I>&gt;<i>     Welcome to the project, and thanks for your contributions! I think
+</I>&gt;<i>     together we
+</I>&gt;<i>     can make a great program.
+</I>&gt;<i> 
+</I>&gt;<i>     joel
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i>     Blah Blahn wrote:
+</I>&gt;<i>      &gt; Hi, I saw your article on KolmoGNUS on Reddit, and I tried it
+</I>&gt;<i>     out, and I
+</I>&gt;<i>      &gt; commented about it (I'm Sukoshi there, and I talked a shade about
+</I>&gt;<i>      &gt; Py2Exe). Anyways, I'd love to help you develop KolmoGNUS and I'm
+</I>&gt;<i>     finding
+</I>&gt;<i>      &gt; it a very nice/convenient piece of software. I already have 60%
+</I>&gt;<i>     of a GTK
+</I>&gt;<i>      &gt; GUI written as a replacement for the TK GUI for all users who want to
+</I>&gt;<i>      &gt; use GTK instead of TK. I would *love* it if you could explain a
+</I>&gt;<i>     few of
+</I>&gt;<i>      &gt; the dictionaries and list structures you use ... the code is very ...
+</I>&gt;<i>      &gt; dense in places, heh. Anyways, I have a few usability features
+</I>&gt;<i>     I'd like
+</I>&gt;<i>      &gt; to add to the GUI, and I'd also like to work on something to get
+</I>&gt;<i>     some
+</I>&gt;<i>      &gt; more recent entries in the list if possible (I'm getting some results
+</I>&gt;<i>      &gt; from last year, not exactly what I want). To do the latter would
+</I>&gt;<i>     require
+</I>&gt;<i>      &gt; some demystification on how the feeds/stories are stored and how
+</I>&gt;<i>     they're
+</I>&gt;<i>      &gt; fed in the filter, which is hard reading as of now. Anyways, hope to
+</I>&gt;<i>      &gt; talk to you soon.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i>     --
+</I>&gt;<i>     Jo&#235;l Schaerer
+</I>&gt;<i>     9, Place Lieutenant Morel
+</I>&gt;<i>     69001 LYON
+</I>&gt;<i> 
+</I>&gt;<i>     06 26 65 29 54
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i>     --
+</I>&gt;<i>     Jo&#235;l Schaerer
+</I>&gt;<i>     PhD. Student
+</I>&gt;<i>     Advisors: Patrick Clarysse, Isabelle Magnin
+</I>&gt;<i>     CREATIS-LRMN, UMR CNRS 5220, Inserm U630
+</I>&gt;<i>     INSA de Lyon
+</I>&gt;<i>     7 rue Jean Capelle bat. Blaise Pascal, 4&#232;me &#233;tage
+</I>&gt;<i>     F-69621 Villeurbanne CEDEX
+</I>&gt;<i>     France
+</I>&gt;<i>     Tel (+33) 4 72 43 63 06
+</I>&gt;<i>     Fax (+33) 4 72 43 85 26
+</I>&gt;<i>     <A HREF="http://www.creatis.insa-lyon.fr">http://www.creatis.insa-lyon.fr</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+-- 
+Jo&#235;l Schaerer
+PhD. Student
+Advisors: Patrick Clarysse, Isabelle Magnin
+CREATIS-LRMN, UMR CNRS 5220, Inserm U630
+INSA de Lyon
+7 rue Jean Capelle bat. Blaise Pascal, 4&#232;me &#233;tage
+F-69621 Villeurbanne CEDEX
+France
+Tel (+33) 4 72 43 63 06
+Fax (+33) 4 72 43 85 26
+<A HREF="http://www.creatis.insa-lyon.fr">http://www.creatis.insa-lyon.fr</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000000.html">[Kolmognus] Welcome to the KolmoGNUS mailing list!
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/kolmognus-discussion">More information about the Kolmognus-discussion
+mailing list</a><br>
+</body></html>

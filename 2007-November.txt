@@ -1,0 +1,218 @@
+From kolmognus-discussion at lists.berlios.de  Mon Nov 26 18:05:15 2007
+From: kolmognus-discussion at lists.berlios.de (General mailing list for KolmoGNUS)
+Date: Mon, 26 Nov 2007 18:05:15 +0100
+Subject: [Kolmognus] Welcome to the KolmoGNUS mailing list!
+Message-ID: <474AFCCB.9030500@laposte.net>
+
+Hello all,
+
+As you should have seen it I have just created the list and added you to the 
+subscribers' list.
+
+Please post to this list before investing significant time in doing something 
+such as coding, in order to avoid wasted effort.
+
+Today I received Arnaud's work on a PyQT GUI. It's not functional yet, but I 
+added it on the svn so you can check it out. Blah, I'm still waiting for your 
+GTK code, I'm very interested in it.
+
+That's all for now!
+
+joel
+
+
+
+
+From kolmognus-discussion at lists.berlios.de  Wed Nov 28 14:18:43 2007
+From: kolmognus-discussion at lists.berlios.de (General mailing list for KolmoGNUS)
+Date: Wed, 28 Nov 2007 14:18:43 +0100
+Subject: [Kolmognus] [Fwd: Re: KolmoGNUS Hacking]
+In-Reply-To: <b87247c70711271732j274b59ean8dc1b3d585c5d1d@mail.gmail.com>
+References: <474A8B97.5080900@insa-lyon.fr>
+	<b87247c70711271732j274b59ean8dc1b3d585c5d1d@mail.gmail.com>
+Message-ID: <474D6AB3.6020207@insa-lyon.fr>
+
+Hello!
+
+Thanks a lot for your contribution. I have tested a bit your GTK interface, and 
+though it is not yet completely functional, I think we are not far from it 
+becomming KolmoGNUS default interface.
+I have added your code to the SVN repository. I'd like to add you to the 
+commiters list, so you can push your changes directly. For that you will need to 
+create a BerliOS account.
+A few random remarks:
+
+- The application takes some time to load the stories when it starts, you need 
+to show the user something to make him wait. A progress bar would be neat.
+
+- The keyboard shortcuts are missing. I think they are very important, since 
+clicking on the buttons is long and cumbersome.
+
+- There is a little bug in the initial training: it has to be done the first 
+time the user starts the application only, not every time.
+
+About your question: App.stories is a dictionnary whose keys are link urls and 
+whose values are DeliciousStory (item_description.py) objects. These objects 
+keep all the information about a specific link. The idea behind this object 
+hierarchy is that delicious doesn't need to be the only source of links, so to 
+add a new source, you would just need to write a new Story class. It is actually 
+quite high on my priority list to allow the user to add custom rss feeds.
+
+joel
+
+
+PS : please write to the mailing list, so everybody can stay updated.
+
+Blah Blahn wrote:
+> I, too, feel PyGTK to be the more mature, tested choice, and believe 
+> that GTK's more liberal license is quite useful for a utility 
+> application like this. Let me attach the work I've done up 'till now. 
+> The interface is mostly complete, I have yet to code the window that 
+> queries for a user's ham/spam tags, and I have to split the entire thing 
+> into threads so that feeds may be queried without locking up the GUI 
+> window. About the density of the code, I do indeed understand that good 
+> code is often dense in places, so some more explanation is all I'm 
+> asking for (and, perhaps, a shot at cleaning up the code myself). 
+> Particularly App.show_stories is messy, and I would like to know the 
+> structure of App.stories.
+> 
+> On 11/26/07, *Joel Schaerer* < joel.schaerer at insa-lyon.fr 
+> <mailto:joel.schaerer at insa-lyon.fr>> wrote:
+> 
+>     Ok, it looks like this email got lost, so I'm sending it again.
+> 
+>     joel
+> 
+>     -------- Original Message --------
+>     Subject: Re: KolmoGNUS Hacking
+>     Date: Sun, 25 Nov 2007 11:25:21 +0100
+>     From: Joel Schaerer <joel.schaerer at laposte.net
+>     <mailto:joel.schaerer at laposte.net>>
+>     To: Blah Blahn <blarghmania at gmail.com
+>     <mailto:blarghmania at gmail.com>>,  Arnaud GELAS
+>     <gelas at creatis.insa-lyon.fr <mailto:gelas at creatis.insa-lyon.fr>>
+>     CC: Axel Mart?nez M?ller < a.martinez-moller at lrz.tu-muenchen.de
+>     <mailto:a.martinez-moller at lrz.tu-muenchen.de>>
+>     References:
+>     <b87247c70711240344w359fc263ycc4e089c04f0402a at mail.gmail.com
+>     <mailto:b87247c70711240344w359fc263ycc4e089c04f0402a at mail.gmail.com>>
+> 
+>     Hi to both of you!
+> 
+>     We have a little problem here: you have simultaneously started
+>     written a new
+>     interface for KolmoGNUS, Blah in pyGTK and Arnaud in PyQT...
+>     Let me first say that I am delighted at such initiatives! Of course
+>     we are going
+>     to have to chose one way or another in order to avoid code and effort
+>     duplication. I have a slight preference for PyGTK because I'm a long
+>     time Gnome
+>     user and because PYGTK seems better developed and more widely used.
+>     It also has
+>     a more permissive license. Of course, since you are the ones
+>     developing the new
+>     interfaces, you have your word to say! What is your feeling about
+>     this issue?
+>     Also, could you each send me what you have done, so I can assess how
+>     far you are.
+> 
+>     In order to avoid this kind of problems in the future, I am setting
+>     up a mailing
+>     list for the project, I will give you more information as soon as it
+>     is ready.
+> 
+>     I have just made a new release. Even though it is only a minor
+>     update, I
+>     encourage you to grab the code so we can all work on the same
+>     codebase. You can
+>     also use subversion to check out the code. I'm a bit reluctant to
+>     give you
+>     commit rights for now, but if you send me nice patches you *will*
+>     get them :)
+> 
+>     Both of you have raised concerns over the "ugliness" or "density" of
+>     the code. I
+>     don't think the code is "ugly", although it's evolved quite a lot so
+>     it should
+>     be expected that some areas don't really make sense. Anyhow, please
+>     use more
+>     specific words when describing the code: i don't think ugly really means
+>     anything; on the other hand "unmaintainable, understandable,
+>     reusable" and such
+>     make a lot more sense.
+> 
+>     I do understand of course that getting inside the code is a bit
+>     tricky, like for
+>     any non-trivial project. I'll be delighted to answer any questions about
+>     specific data structures or functions.
+> 
+>     Welcome to the project, and thanks for your contributions! I think
+>     together we
+>     can make a great program.
+> 
+>     joel
+> 
+> 
+>     Blah Blahn wrote:
+>      > Hi, I saw your article on KolmoGNUS on Reddit, and I tried it
+>     out, and I
+>      > commented about it (I'm Sukoshi there, and I talked a shade about
+>      > Py2Exe). Anyways, I'd love to help you develop KolmoGNUS and I'm
+>     finding
+>      > it a very nice/convenient piece of software. I already have 60%
+>     of a GTK
+>      > GUI written as a replacement for the TK GUI for all users who want to
+>      > use GTK instead of TK. I would *love* it if you could explain a
+>     few of
+>      > the dictionaries and list structures you use ... the code is very ...
+>      > dense in places, heh. Anyways, I have a few usability features
+>     I'd like
+>      > to add to the GUI, and I'd also like to work on something to get
+>     some
+>      > more recent entries in the list if possible (I'm getting some results
+>      > from last year, not exactly what I want). To do the latter would
+>     require
+>      > some demystification on how the feeds/stories are stored and how
+>     they're
+>      > fed in the filter, which is hard reading as of now. Anyways, hope to
+>      > talk to you soon.
+> 
+> 
+>     --
+>     Jo?l Schaerer
+>     9, Place Lieutenant Morel
+>     69001 LYON
+> 
+>     06 26 65 29 54
+> 
+> 
+> 
+>     --
+>     Jo?l Schaerer
+>     PhD. Student
+>     Advisors: Patrick Clarysse, Isabelle Magnin
+>     CREATIS-LRMN, UMR CNRS 5220, Inserm U630
+>     INSA de Lyon
+>     7 rue Jean Capelle bat. Blaise Pascal, 4?me ?tage
+>     F-69621 Villeurbanne CEDEX
+>     France
+>     Tel (+33) 4 72 43 63 06
+>     Fax (+33) 4 72 43 85 26
+>     http://www.creatis.insa-lyon.fr
+> 
+> 
+
+-- 
+Jo?l Schaerer
+PhD. Student
+Advisors: Patrick Clarysse, Isabelle Magnin
+CREATIS-LRMN, UMR CNRS 5220, Inserm U630
+INSA de Lyon
+7 rue Jean Capelle bat. Blaise Pascal, 4?me ?tage
+F-69621 Villeurbanne CEDEX
+France
+Tel (+33) 4 72 43 63 06
+Fax (+33) 4 72 43 85 26
+http://www.creatis.insa-lyon.fr
+
+
